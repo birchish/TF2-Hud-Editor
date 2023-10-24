@@ -37,7 +37,6 @@ grow_vertical = 0
 text = "Compile Hud"
 
 [node name="HUD" type="Control" parent="."]
-clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

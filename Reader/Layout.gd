@@ -25,7 +25,7 @@ func load_layout():
 	while F_layout .get_position() < F_layout .get_length():
 		var line = F_layout.get_line()
 		
-		if line =="\"Resource/HudLayout.res\"":
+		if line =="{":
 			while F_layout .get_position() < F_layout .get_length():
 				line = F_layout.get_line()
 				if line.contains("	{") and !line.contains("		"): # Remember "		if_vr" search in hudlayout.res
@@ -51,17 +51,21 @@ func load_layout():
 		else:
 			Preamble.append(line)
 			
+		
 func save_layout():
+	var F_layout = FileAccess.open("user://D_hudlayout.res",FileAccess.WRITE)
 	var output = ""
+	
 	for I in Preamble:
 		output += I + "\n"
-	output += "\"Resource/HudLayout.res\"\n{\n"
-	var F_layout = FileAccess.open("user://D_hudlayout.res",FileAccess.WRITE)
+		
+	output += "{\n"
+	
 	for K in Full_Array_Hud.keys():
 		output += "\t" + K + "\n\t{\n"
 		for V in Full_Array_Hud[K]:
 			output += "\t\t" + V + "\n"
 		output += "\t" + "}\n\n"
 	output += "}"
-	F_layout.store_string(output)
 	
+	F_layout.store_string(output)

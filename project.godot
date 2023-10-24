@@ -10,15 +10,14 @@ config_version=5
 
 [application]
 
-config/name="TF2 Hud Render-Editor"
-run/main_scene="res://Reader/Layout.tscn"
+config/name="TF2 Hud Editor"
+run/main_scene="res://Render/HudOutput.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/vsync/vsync_mode=0
 
 [dotnet]
 

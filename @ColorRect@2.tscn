@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[node name="_ColorRect_2" type="ColorRect"]
+offset_left = 2.0
+offset_top = 250.0
+offset_right = 302.0
+offset_bottom = 380.0
